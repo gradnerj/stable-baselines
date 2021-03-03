@@ -38,10 +38,11 @@ def find_tf_dependency():
 
     tf_dependency = []
     if install_tf:
-        tf_dependency = ['tensorflow-gpu>=1.8.0,<2.0.0'] if tf_gpu else ['tensorflow>=1.8.0,<2.0.0']
+        tf_dependency = ['tensorflow-gpu==1.15.4'] if tf_gpu else ['tensorflow>==1.15.4']
         if tf_gpu:
             print("A GPU was detected, tensorflow-gpu will be installed")
-
+        else:
+            print("A GPU was not detected.")
     return tf_dependency
 
 
